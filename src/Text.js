@@ -12,7 +12,8 @@ import { useState, useEffect } from 'react';
 
 export const Text = () => {
     
-    const [inputText, setInputText] = useState("");
+    const [inputText, setInputText] = useState("");            
+    const [showText, setShowText] = useState(false)
     
     useEffect(() => {
         console.log('Component Did Mount');
@@ -24,12 +25,18 @@ export const Text = () => {
 
     return (
         <div>
-            <input onChange={(event) => {
+            <h2>Understanding Lifecycle: Mount, Update, Unmount</h2>
+            <button onClick={() => {setShowText(!showText)}}>Show Text</button>
+            {showText && 
+            <div>
+                <input onChange={(event) => {
                 setInputText(event.target.value)
-            }}/>
-            <h2>
-                {inputText}
-            </h2>
+                }}/>
+                <h2>
+                    {inputText}
+                </h2>
+            </div>}
+            
         </div>
     )
 }
