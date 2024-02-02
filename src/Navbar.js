@@ -8,6 +8,7 @@ export const Navbar = () => {
             <Link to={"/lifecycles"}>State Lifecycle</Link>
             <Link to={"/api"}>API</Link>
             <Link to={"/parent"}>State Management</Link>
+            <Link to={"/query"}>React Query</Link>
         </div>
     )
 }

@@ -1,10 +1,18 @@
 import { useState } from 'react';
 
-//CRUD - Create, Read, Update, Delete State
-// With the use of the React hook "useState"
-// Shown Below
-// const [variable to hold a state, function that alters the state]
-// = useState(data type AND initial value of the State)
+/*      CRUD - Create, Read, Update, Delete State
+ With the use of the React hook "useState"
+ Shown Below
+    1.  First Initialize useState
+        a. Variable to hold data
+        b. Function changes data
+    const [variable, function] = useState(Initial Value)
+    2.  Create Handle Function if necessary
+        a. Handle function dictate HOW the data is changed
+        ex: handling the onChange EVENT in an input
+    3.  Use JSX elements to show the data in the return
+        a. <h1> <h2>, etc...
+*/
 
 export const Crud = () => {
     //the onChange from input will be added to an array by button click and shown in h3
