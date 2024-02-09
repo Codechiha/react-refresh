@@ -17,6 +17,13 @@ import { Form } from "./Form.js"
 //Custom Hooks
 import { useCount } from "./CustomHook/useCount.js";
 import { useToggle } from "./CustomHook/useToggle.js";
+//Redux
+import { Home } from "./ReduxPages/Home.js";
+import { Login } from "./ReduxPages/Login.js";
+//Provider -> gives state access to all components it wraps
+//In this example, the store holds the state
+import { Provider } from "react-redux";
+import { store } from "./ReduxPages/store.js";
 
 
 /*        Using Routes
@@ -51,8 +58,9 @@ function App() {
   return (
     <div className="App">
       <QueryClientProvider client={client}>
+        <Provider store={store}>
         <Router>
-          <Navbar />
+          <Navbar />            
           <Routes>
             <Route path={"/"} element={<Basics />} />
             <Route path={"/crud"} element={<Crud />}/>
@@ -61,9 +69,12 @@ function App() {
             <Route path={"/parent"} element={<Parent />} />
             <Route path={"/query"} element={<Query />} />
             <Route path={"/form"} element={<Form />} />
+            <Route path={"/home"} element={<Home />} />
+            <Route path={"/login"} element={<Login />} /> 
             <Route path={"*"} element={<h1>Page Not Found</h1>} />
-          </Routes>
+          </Routes>  
         </Router>
+        </Provider>
       </QueryClientProvider>
       <div>
         <h1>Custom Hooks</h1>

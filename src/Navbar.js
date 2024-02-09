@@ -11,6 +11,9 @@ export const Navbar = () => {
             <Link to={"/parent"} className="link">State Management</Link>
             <Link to={"/query"} className="link">React Query</Link>
             <Link to={"/form"} className="link">Form</Link>
+            <Link to={"/home"} className="link">Home</Link>
+            <Link to={"/login"}>Login</Link>
+
         </div>
     )
 }
